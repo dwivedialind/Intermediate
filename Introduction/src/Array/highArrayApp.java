@@ -68,6 +68,13 @@ class HighArray
             return max;
         }
     }
+    public void removeMax(){
+
+        long max = getMax();
+
+        delete(max);
+
+    }
     //-----------------------------------------------------------
 }  // end class HighArray
 ////////////////////////////////////////////////////////////////
@@ -101,10 +108,12 @@ class HighArrayApp
         arr.delete(00);               // delete 3 items
         arr.delete(55);
         arr.delete(99);
-
+        arr.display();
+        System.out.println("Max: "+arr.getMax());
+        arr.removeMax();
         arr.display();
 
-        System.out.println("Max: "+arr.getMax());
+        ;
 
         // display items again
     }  // end main()

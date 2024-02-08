@@ -1,2 +1,14 @@
 #Binary Search: prerequesite: ordered arrays, much faster than linear array especially for larger arrays.
 #Ordered Arrays are useful in situation when searches are frequent but insertion and deletion are not.
+
+#In a real situation, the actual time (in microseconds or whatever) required by the
+ insertion is related to the speed of the microprocessor, how efficiently the compiler
+ has generated the program code, and other factors
+
+#Arrays in Java are object created with the new operator.
+#Unordered arrays offer fast insertion[O(1)] but slow searching[O(N)] and deletion[O(N)].
+#A class interface is composed of the methods (and ocassionally fields) that the class user can access.
+
+#Linear search: O(N)
+#Binary search: O(logN)
+

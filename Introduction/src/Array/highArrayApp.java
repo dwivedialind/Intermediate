@@ -56,6 +56,18 @@ class HighArray
             System.out.print(a[j] + " ");  // display it
         System.out.println("");
     }
+
+    public long getMax(){
+        if(nElems == 0)
+            return -1L;
+        else{
+            long max = Long.MIN_VALUE;
+            for (int i = 0 ; i< nElems; i++)
+                if(a[i] > max)
+                    max = a[i];
+            return max;
+        }
+    }
     //-----------------------------------------------------------
 }  // end class HighArray
 ////////////////////////////////////////////////////////////////
@@ -66,7 +78,7 @@ class HighArrayApp
         int maxSize = 100;            // array size
         HighArray arr;                // reference to array
         arr = new HighArray(maxSize); // create the array
-
+        System.out.println("Max: "+arr.getMax());
         arr.insert(77);               // insert 10 items
         arr.insert(99);
         arr.insert(44);
@@ -79,7 +91,7 @@ class HighArrayApp
         arr.insert(33);
 
         arr.display();                // display items
-
+        System.out.println("Max: "+arr.getMax());
         int searchKey = 35;           // search for item
         if( arr.find(searchKey) )
             System.out.println("Found " + searchKey);
@@ -90,6 +102,10 @@ class HighArrayApp
         arr.delete(55);
         arr.delete(99);
 
-        arr.display();                // display items again
+        arr.display();
+
+        System.out.println("Max: "+arr.getMax());
+
+        // display items again
     }  // end main()
 }  // end class HighArrayApp

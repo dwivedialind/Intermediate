@@ -1,0 +1,2 @@
+#Binary Search: prerequesite: ordered arrays, much faster than linear array especially for larger arrays.
+#Ordered Arrays are useful in situation when searches are frequent but insertion and deletion are not.

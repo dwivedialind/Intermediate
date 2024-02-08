@@ -67,6 +67,12 @@ class OrderArray{
             System.out.print(a[j] + " ");  // display it
         System.out.println("");
     }
+
+    public void merge(int [] arr){
+        for(int i = 0 ; i< arr.length; i++){
+            insert(arr[i]);
+        }
+    }
 }
 public class OrderedArray {
 
@@ -88,11 +94,17 @@ public class OrderedArray {
 
         arr.display();
 
-        int searchKey = 55;            // search for item
-        if( arr.find(searchKey) != -1 )
-            System.out.println("Found " + searchKey);
-        else
-            System.out.println("Can't find " + searchKey);
+       int[] orderedArray = {10,13,14,15,17}; //we have to merge this ordered array with source array
+        /*
+        Assumptions:
+        1. size of source array is enough to accomodate merged array
+        2. no duplicates in source array and array to be merged
+        3. array to be merged is also sorted ascending order
+         */
+
+        arr.merge(orderedArray);
+        arr.display();
+
 
     }
 }

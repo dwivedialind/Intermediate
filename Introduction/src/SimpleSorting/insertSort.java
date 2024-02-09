@@ -40,6 +40,20 @@ class ArrayIns{
 
 
     }
+    public void noDups(){
+        //we will remove first duplicate found
+        int i = 0;
+        while(i < nElems-1){
+            if(a[i]==a[i+1]){
+                for(int j = i ; j < nElems; j++){
+                    a[j]=a[j+1];
+                }
+                nElems--;
+            }
+            i++;
+        }
+
+    }
 }
 public class insertSort {
     public static void main(String[] args) {
@@ -50,18 +64,19 @@ public class insertSort {
         arr.insert(77);               // insert 10 items
         arr.insert(99);
         arr.insert(44);
-        arr.insert(55);
+        arr.insert(11);
         arr.insert(22);
         arr.insert(88);
-        arr.insert(11);
+        arr.insert(44);
         arr.insert(00);
-        arr.insert(66);
-        arr.insert(33);
+        arr.insert(77);
+        arr.insert(99);
 
         arr.display();                // display items
 
-        arr.insertSort();          // insertion-sort them
-
+        arr.insertSort();// insertion-sort them
+        arr.display();
+        arr.noDups();
         arr.display();
     }
 }

@@ -1,0 +1,5 @@
+#BubbleSort: As the algorithm progresses, the biggest item "bubble up" to the top end of the array.
+1. using a separate swap()
+   method may not be a good idea in practice because the function call adds a small
+   amount of overhead. If you’re writing your own sorting routine, you may prefer to
+   put the swap instructions in line to gain a slight increase in speed.

@@ -1,5 +1,19 @@
-#BubbleSort: As the algorithm progresses, the biggest item "bubble up" to the top end of the array.
+#BubbleSort[ O(N*N) ] : As the algorithm progresses, the biggest item "bubble up" to the top end of the array.
 1. using a separate swap()
    method may not be a good idea in practice because the function call adds a small
    amount of overhead. If you’re writing your own sorting routine, you may prefer to
    put the swap instructions in line to gain a slight increase in speed.
+
+2. In many algorithms there are conditions that remain unchanged as the algorithm proceeds. These conditions are called invariants.
+3. No. of swaps in bubbleSort: O(N*N)
+
+#SelectionSort
+1. The selection sort improves on the bubble sort by reducing the number of swaps
+   necessary from O(N2) to O(N). Unfortunately, the number of comparisons remains
+   O(N2). However, the selection sort can still offer a significant improvement for large
+          records that must be physically moved around in memory, causing the swap time to
+          be much more important than the comparison time. (Typically, this isn’t the case in
+          Java, where references are moved around, not entire objects.)
+
+2. In the selectSort.java program, the data items with indices less than or equal to out
+   are always sorted. ---- invariant

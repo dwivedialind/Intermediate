@@ -21,10 +21,19 @@ class ArrayBub{
     }
 
     public void bubbleSort(){
-        for(int i = 0 ; i < nElems; i++){
-            for(int j = 0; j < nElems-1-i; j++ )
-                if(a[j] > a[j+1])
-                    swap(j);
+
+        for(int out = 0 ; out < nElems-1; out ++ ){
+            int in = out;
+            for(in = out; in< nElems-1-out; in++){
+                if(a[in]>a[in+1])
+                    swap(in);
+            }
+            for(int j = in-1 ; j > out; j--){
+                if(a[j]<a[j-1]){
+                    swap(j-1);
+                }
+            }
+
         }
     }
 

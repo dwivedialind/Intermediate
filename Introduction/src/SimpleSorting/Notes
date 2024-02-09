@@ -36,3 +36,7 @@
 
 4. for data arranged in inverse sorted order, every possible comparison and
    shift is carried out, so the insertion sort runs no faster than the bubble sort
+
+##All these three sorting algorithms are stable.
+A sort is stable if the order of elements with the same key is retained.
+All the sorting are in-place.

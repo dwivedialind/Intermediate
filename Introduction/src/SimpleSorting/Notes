@@ -17,3 +17,22 @@
 
 2. In the selectSort.java program, the data items with indices less than or equal to out
    are always sorted. ---- invariant
+
+
+#Insertion Sort
+1. In most cases the insertion sort is the best of the elementary sorts described in this
+   chapter. It still executes in O(N2) time, but it’s about twice as fast as the bubble sort
+   and somewhat faster than the selection sort in normal situations.
+
+2. At the end of each pass, following the insertion of the item from temp, the data items
+   with smaller indices than outer are partially sorted.
+
+3. For data that is already sorted or almost sorted, the insertion sort does much better.
+   When data is in order, the condition in the while loop is never true, so it becomes a
+   simple statement in the outer loop, which executes N-1 times. In this case the algorithm
+   runs in O(N) time. If the data is almost sorted, insertion sort runs in almost
+   O(N) time, which makes it a simple and efficient way to order a file that is only
+   slightly out of order.
+
+4. for data arranged in inverse sorted order, every possible comparison and
+   shift is carried out, so the insertion sort runs no faster than the bubble sort

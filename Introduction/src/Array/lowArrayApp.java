@@ -25,7 +25,7 @@ class LowArrayApp
     public static void main(String[] args)
     {
         LowArray arr;                 // reference
-        arr = new LowArray(100);      // create LowArray object
+        arr = new LowArray(100);      // create LowArray objectSort
         int nElems = 0;               // number of items in array
         int j;                        // loop variable
 

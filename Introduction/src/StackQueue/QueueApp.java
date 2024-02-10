@@ -14,8 +14,12 @@ class Queue{
     }
 
     public void insert(long j){
-        if(isFull())
+        if(isFull()){
+            System.out.println("queue is full");
             return;
+        }
+
+
         if(rear == maxSize-1) //wrap around rear
             rear = -1;
         que[++rear] = j;
@@ -61,6 +65,7 @@ public class QueueApp {
         theQueue.insert(60); // (wraps around)
         theQueue.insert(70);
         theQueue.insert(80);
+        theQueue.insert(90);
         while( !theQueue.isEmpty() ) // remove and display
         { // all items
             long n = theQueue.remove(); // (40, 50, 60, 70, 80)

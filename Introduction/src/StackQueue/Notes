@@ -1,0 +1,9 @@
+#Stack-Queue-Priority Queue
+1. These data structures are programmers tools. They're primarily conceptual aids rather than full-fledged data storage devices.
+2. Have restricted access. The interface of these structures is designed ot enforce this restricted access.
+3. More abstract entities than many other data storage structures.
+
+4.Most microprocessors use a stack-based architecture. When a method is called, its
+  return address and arguments are pushed onto a stack, and when it returns, they’re
+  popped off. The stack operations are built into the microprocessor.
+5. Can be implemented using arrays or LL, however interface have only three methods allowed push() at top, pop() at top, peek() at top.

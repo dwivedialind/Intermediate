@@ -8,7 +8,7 @@ class Node{
       // next is automatically set to null
     }
     public void displayNode(){ // display a node.
-        System.out.print(" {"+ data+"} ");
+        System.out.print(data+" ");
     }
 }
 

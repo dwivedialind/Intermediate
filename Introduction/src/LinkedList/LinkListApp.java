@@ -8,7 +8,7 @@ class Node{
       // next is automatically set to null
     }
     public void displayNode(){ // display a node.
-        System.out.println("{ "+ data+" }");
+        System.out.print(" {"+ data+"} ");
     }
 }
 
@@ -48,9 +48,9 @@ class LinkList{
         System.out.println("");
     }
 
-
-
-
+    public Node getFirst() {
+        return first;
+    }
 }
 public class LinkListApp {
     public static void main(String[] args) {

@@ -1,0 +1,7 @@
+#Linked Lists are one of the most used data storage structures after arrays.
+1. Nodes in LL are self referential class definition. They can contain data or object of class that contains data.
+class Link{
+    public int data; //data
+    public Link next; // reference to next link
+}
+Link/Node can have any number of data.

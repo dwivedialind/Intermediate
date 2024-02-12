@@ -1,4 +1,5 @@
-#Stack-Queue-Priority Queue
+##Stack-Queue-Priority Queue
+#Stack
 1. These data structures are programmers tools. They're primarily conceptual aids rather than full-fledged data storage devices.
 2. Have restricted access. The interface of these structures is designed ot enforce this restricted access.
 3. More abstract entities than many other data storage structures.
@@ -7,3 +8,11 @@
   return address and arguments are pushed onto a stack, and when it returns, they’re
   popped off. The stack operations are built into the microprocessor.
 5. Can be implemented using arrays or LL, however interface have only three methods allowed push() at top, pop() at top, peek() at top.
+6. If the stack is full and you try to push another item, you’ll get the Can’t insert:
+   stack is full message. (Theoretically, an ADT stack doesn’t become full, but the
+   array implementing it does.)
+
+7. If stack had been implemented using a linked list, for example, the size specification would be unnecessary
+
+#Queue
+1. Circular queue also called ring buffer.

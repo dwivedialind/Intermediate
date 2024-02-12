@@ -98,6 +98,8 @@ class DoublyLinkedList{
         }
         if(current== last)//last
             deleteLast();
+        else if(current == first)
+            deleteFirst();
         else{
             current.previous.next = current.next;
             current.next.previous = current.previous;
@@ -140,7 +142,7 @@ public class DoublyLinkedApp {
         theList.displayBackward(); // display list backward
         theList.deleteFirst(); // delete first item
         theList.deleteLast(); // delete last item
-        theList.delete(11); // delete item with key 11
+        theList.delete(44); // delete item with key 11
         theList.displayForward(); // display list forward
         theList.insertAfter(22, 77); // insert 77 after 22
         theList.insertAfter(33, 88); // insert 88 after 33

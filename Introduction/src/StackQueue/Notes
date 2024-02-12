@@ -16,3 +16,13 @@
 
 #Queue
 1. Circular queue also called ring buffer.
+
+
+#Priority Queue
+1. Like an ordinary queue, a priority queue has a front and rear, and items are removed from the front.
+However, in a priority queue, items are ordered by key value so that the item with the lowest key(or in some implementations with the
+highest key) is always at the front. Items are inserted in the proper position to maintain the order.
+
+2. If we want priority queue with quick insertions they're implemented using heaps.
+Array implementation of priority queue is simple and is appropriate when the number of items isn't high or insertion speed isn't critical.
+

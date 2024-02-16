@@ -1,4 +1,7 @@
 package Graphs;
+
+import java.util.Stack;
+
 class Vertex{
     public char label; //a label for a Vertex
     public boolean wasVisisted; // to tell if vertex is visited
@@ -30,7 +33,7 @@ class Graph{
         adjMatrix[end][start] = 1;
     }
     public void displayVertex(int v){
-        System.out.println(vertexList[v].label);
+        System.out.print(vertexList[v].label);
     }
 
     public void dfs(){
@@ -74,6 +77,25 @@ class Graph{
         }
         for(int i = 0 ;i < nVert; i++)
         vertexList[i].wasVisisted = false; // as queuw is empty
+    }
+    public void mst(){
+        //start from vertex 0
+        StackX stack = new StackX();
+        vertexList[0].wasVisisted = true; //mark it
+        stack.push(0); //push it
+        while(!stack.isEmpty()){
+            int currentVertex = stack.peek();
+            int v = getAdjUnvisitedVertex(currentVertex);
+            if(v==-1){ //no univisited adjactent vertex
+                stack.pop();
+            }else{
+                displayVertex(currentVertex);
+                displayVertex(v);
+                System.out.print(" ");
+                vertexList[v].wasVisisted = true; // mark it
+                stack.push(v); // push it
+            }
+        }
     }
     public int getAdjUnvisitedVertex(int v){
         for(int i =0 ; i< nVert; i++)

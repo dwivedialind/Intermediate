@@ -1,0 +1,76 @@
+#Graphs are data structure like trees. In face in mathematical sense trees are kind of graph. However in computer programming graphs are used
+differently than trees.
+#Graphs, on the other hand, often have a shape dictated by
+ a physical or abstract problem.
+#Nodes in graph are called vertices.
+#Adjacent Vertices: Two vertices are said to be adjacent if they're connected using single edge.
+Vertices adjacent to certain vertex are called it's neighbours.
+#Path: sequence of edges connecting two vertices. There can be more than one path between two vertices.
+#Connected Graphs: A graph is said to be connected if there is atleast one path from every vertex to every other vertex.
+A non-connected graph consists of several connected components.
+#Directed and Weighted graphs: Directed graphs in which we can go only in 1 direction. In some graphs, edges are given a weight, a number that can represent the physical
+ distance between two vertices, or the time it takes to get from one vertex to another,or how much it costs to travel from vertex to vertex (on airline routes, for example).Such graphs are called weighted graphs.
+
+# In program edges can be represented in two ways in a graph:
+a. Adjacency Matrix:  An adjacency matrix is a two-dimensional array in which the elements indicate
+                      whether an edge is present between two vertices. If a graph has N vertices, the adjacency
+                      matrix is an NxN array.
+ The vertices are used as headings for both rows and columns. An edge between two
+ vertices is indicated by a 1; the absence of an edge is a 0. (You could also use Boolean
+ true/false values.)
+Diagonal from upper-left to lower-right is called identity diagonal.
+
+b. Adjacency List: The other way to represent edges is with adjacency lists.
+
+##Searches: There are two common approaches for searching a graph. Both will eventually reach all connected vertices.
+a. BFS: Breadth first search, implemented using queues.
+b. DFS: Depth first search, implemented using stack.: the algorithm acts as though it wants to get as
+                                                      far away from the starting point as quickly as possible
+
+#DFS and Game Simulations: In a typical game you can choose one of several possible actions. Each choice leads to further choices, each of which leads to further choices, and so on into an ever-expanding
+tree-shaped graph of possibilities. A choice point corresponds to a vertex, and the specific choice taken corresponds to an edge, which leads ot another choice-point vertex.
+
+You can think of the sequences of moves in a game as a tree, with nodes representing
+moves. The first move is the root. In tic-tac-toe, after the first move there are
+eight possible second moves, each represented by a node connected to the root. After
+each of these eight second moves, there are seven possible third moves represented
+by nodes connected to the second-move nodes. You end up with a tree with 9! possible
+paths from the root to the leaves. This is called the game tree.
+Actually, the number of branches in the game tree is reduced because the game is
+often won before all the squares are filled.
+
+#Breadth First Search: This is useful if you’re trying to find the shortest path from the
+                       starting vertex to a given vertex.
+
+#Minimum Spanning Tree(MST): It is a subgraph with minimum number of edges necessary to connect the vertices.
+Graph remains connected. with same number of edges.
+There are many possible minimum spanning trees for a given set of vertices. In minimum spanning tree, number of edges E is always 1 less than vertices.
+E = V-1;
+The algorithm for creating the minimum spanning tree is almost identical to that used for searching. It can be based on either the depth-first search or the breadth-first search.
+
+#Directed Graph: Edges have direction. In a program, the difference between a non-directed graph and a directed graph is
+                                       that an edge in a directed graph has only one entry in the adjacency matrix.
+Each edge is represented by a single 1. The row labels show where the edge starts,
+and the column labels show where it ends. Thus, the edge from A to B is represented
+by a single 1 at row A column B. If the directed edge were reversed so that it went
+from B to A, there would be a 1 at row B column A instead.
+
+For a non-directed graph, as we noted earlier, half of the adjacency matrix mirrors
+the other half, so half the cells are redundant. However, for a weighted graph, every
+cell in the adjacency matrix conveys unique information. The halves are not mirror
+images.
+
+##Topological sorting algorithm works on unconnected graph as well as connected graphs.
+One type of graph that topological sorting algorithm cannot handle is graph with cycle. Cycle is path that end where it started.
+
+A graph with no cycles is called tree. If a graph with N nodes has
+                                       more than N-1 edges, it must have cycles.
+
+A topological sort must be carried out on a directed graph with no cycles. Such a
+graph is called a directed acyclic graph, often abbreviated DAG.
+
+##Searches in Directed graph: Connectivity Table: Warshall's Algorithm
+Connectivity Table: The first letter is the starting
+                    vertex and subsequent letters show the vertices that can be reached (either directly
+                    or via other vertices) from the starting vertex.
+

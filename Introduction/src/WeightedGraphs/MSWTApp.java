@@ -1,9 +1,14 @@
 package WeightedGraphs;
 class Vertex{
     public char label; //label for a class
+    public boolean wasVisited;
     public Vertex(char lab){
         label = lab;
+        wasVisited = false;
     } //end constructor
+    public void displayVertex(){
+        System.out.print(label);
+    }
 }//end Vertex
 class Edge{ // used as element in priority queue
     public int source; // edge from
@@ -88,8 +93,9 @@ class PriorityQueue{
         return -1;
     }
 
-    public void remove(int d){
-
+    public Edge removeTop(){
+        size--; //decrement size
+        return queue[front--];
     }
     public void removeDup(Edge edge){
         //this will remove if any with more weight and if there is none then it returns.
@@ -113,25 +119,89 @@ class PriorityQueue{
     public void displayQueue(){
         for(int i = front ; i >=rear; i--)
             queue[i].displayEdge();
-        System.out.println(" ");
+        System.out.print("");
     }
 
 
 }
 class Graph{
+    private final int maxVertex = 20; // max no. of vertices
+    private int nVerts; // no. of vertices
+    private Vertex[] vertexList; //array of vertices
+    private int[][] adjMatrix; //adjacency matrix
+    public Graph(){
+        vertexList = new Vertex[maxVertex];
+        nVerts = 0;
+        adjMatrix = new int[maxVertex][maxVertex];
+        for(int i = 0 ; i< maxVertex ; i++)
+            for(int j = 0; j < maxVertex; j++)
+                adjMatrix[i][j] = -1; // initialise with -1
+    }
+    public void addVertex(char lab){
+        vertexList[nVerts++] = new Vertex(lab);
+    }
+    public void addEdge(int start, int end, int weight){ //undirected weighted graph
+        adjMatrix[start][end] = weight;
+        adjMatrix[end][start] = weight;
+    }
+
+    public void mstw(){
+        //begins at 0
+        PriorityQueue queue = new PriorityQueue();
+        int[] Tree = new int[nVerts];
+        int newest = 0; // no. of elements in a tree
+        Tree[newest++] = 0;
+        vertexList[0].wasVisited = true;
+        while(newest!=nVerts){ //when all the vertices are visited
+            int currentVertice = Tree[newest-1];
+           for(int i = 0; i < nVerts; i++){
+               if(adjMatrix[currentVertice][i]!=-1 && !vertexList[i].wasVisited){//edges that have weight
+                   Edge newEdge = new Edge(currentVertice,i,adjMatrix[currentVertice][i]);
+                   queue.insert(newEdge); //insert those edges in priority queue
+               }
+           }
+           //now we have to remove minimum distance, i.e at top of priority queue
+            //queue.displayQueue();
+            Edge ed = queue.removeTop(); //removes at top
+            vertexList[ed.source].displayVertex();
+            vertexList[ed.destination].displayVertex();
+            System.out.print(" ");
+            Tree[newest++] = ed.destination;
+            vertexList[ed.destination].wasVisited = true; //mark it that means it's in tree
+        }
+    }
+    public void displayMatrix(){
+        for(int i = 0 ; i < nVerts; i++) {
+            for (int j = 0; j < nVerts; j++)
+                System.out.print(adjMatrix[i][j] + " ");
+            System.out.println("");
+        }
+    }
 
 }
 public class MSWTApp {
     public static void main(String[] args) {
-        PriorityQueue que = new PriorityQueue();
-        Edge e1 = new Edge(0,1,5);
-        Edge e2 = new Edge(1,3,7);
-        Edge e3 = new Edge(2,1,3);
-        Edge e4 = new Edge(0,2,4);
-        que.insert(e1);
-        que.insert(e2);
-        que.insert(e3);
-        que.insert(e4);
-        que.displayQueue();
+        Graph theGraph = new Graph();
+        theGraph.addVertex('A'); // 0 (start for mst)
+        theGraph.addVertex('B'); // 1
+        theGraph.addVertex('C'); // 2
+        theGraph.addVertex('D'); // 3
+        theGraph.addVertex('E'); // 4
+
+
+        theGraph.addEdge(0, 1, 2); // AB 2
+        theGraph.addEdge(0, 3, 4); // AD 4
+        theGraph.addEdge(0, 2, 10); // AC 4
+        theGraph.addEdge(1, 3, 12); // BD 12
+        theGraph.addEdge(1, 4, 4); // BE 4
+        theGraph.addEdge(2, 3, 5); // CD 5
+        theGraph.addEdge(2, 4, 7); // CE 7
+        theGraph.addEdge(2, 1, 3); // CB 6
+
+
+        //theGraph.displayMatrix();
+        System.out.print("Minimum spanning tree: ");
+        theGraph.mstw(); // minimum spanning tree
+        System.out.println();
     }
 }

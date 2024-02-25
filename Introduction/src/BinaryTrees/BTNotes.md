@@ -38,6 +38,19 @@ root is levle 0, then its children level 1, its grandchildren will be level 2, a
 ### Keys
 This value is used to search for the item or perform other operations on it.  
 
+## Binary Trees
+
+If every node in a tree can have at most two children, the tree is called binary tree.  
+degree of any node in binary tree can be `0 1 2`.   
+
+`Binary Search Tree`  
+The defining characteristic of a binary search tree is this: A node's left child must have a key less than its parent, and a node's right child
+must have key greater than or equal to its parent.  
+
+How Do Binary Search Trees Work?  
+
+
+
 
 
 

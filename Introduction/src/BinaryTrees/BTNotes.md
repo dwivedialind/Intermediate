@@ -5,3 +5,9 @@ Search a tree quickly as in ordered array, and also insert and delete items quic
 
 ## Slow Insertion in an Ordered Array
 
+In ordered Array, Binary Search in O(logN).  
+While Inserting includes find right position to insert and move elements.  
+Similary Deleting involves the same multimove operations and is thus equally slow.  
+
+
+
